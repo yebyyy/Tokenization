@@ -1,2 +1,2 @@
 # Tokenization
-This repo is for practising tokenization
+Let's build a GPT Tokenizer!
