@@ -1,21 +1,6 @@
-"""
-Minimal (byte-level) Byte Pair Encoding tokenizer.
+import re as re
+from base import Tokenizer, get_stats, merge
 
-Algorithmically follows along the GPT tokenizer:
-https://github.com/openai/gpt-2/blob/master/src/encoder.py
-
-Unlike BasicTokenizer:
-- RegexTokenizer handles an optional regex splitting pattern.
-- RegexTokenizer handles optional special tokens.
-"""
-
-import regex as re
-from .base import Tokenizer, get_stats, merge
-
-
-# the main GPT text split patterns, see
-# https://github.com/openai/tiktoken/blob/main/tiktoken_ext/openai_public.py
-GPT2_SPLIT_PATTERN = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 GPT4_SPLIT_PATTERN = r"""'(?i:[sdmt]|ll|ve|re)|[^\r\n\p{L}\p{N}]?+\p{L}+|\p{N}{1,3}| ?[^\s\p{L}\p{N}]++[\r\n]*|\s*[\r\n]|\s+(?!\S)|\s+"""
 
 
@@ -31,7 +16,7 @@ class RegexTokenizer(Tokenizer):
         self.pattern = GPT4_SPLIT_PATTERN if pattern is None else pattern
         self.compiled_pattern = re.compile(self.pattern)
         self.special_tokens = {}
-        self.inverse_special_tokens = {}
+        self.inverse_special_tokens = {}  # maps int -> str
 
     def train(self, text, vocab_size, verbose=False):
         assert vocab_size >= 256
@@ -66,7 +51,7 @@ class RegexTokenizer(Tokenizer):
                 print(f"merge {i+1}/{num_merges}: {pair} -> {idx} ({vocab[idx]}) had {stats[pair]} occurrences")
 
         # save class variables
-        self.merges = merges # used in encode()
+        self.merges = merges  # used in encode()
         self.vocab = vocab   # used in decode()
 
     def register_special_tokens(self, special_tokens):
