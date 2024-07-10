@@ -17,7 +17,4 @@ The basic bpe tokenizer outputs the following result:
 
 
 
-Decoded Text with Colors:
-This is a basic tokenizer implementation of the bpe algorithm with ten thousand vocabulary size.
-
 
