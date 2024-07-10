@@ -15,6 +15,11 @@ The basic bpe tokenizer outputs the following result:
 
 <img width="1131" alt="Screenshot 2024-07-10 at 11 29 19 AM" src="https://github.com/yebyyy/Tokenization/assets/144394157/60551325-afce-4abb-bc8a-e2eddac7758d">
 
+The GPT2 tokenizer outouts the following result:
+
+<img width="1283" alt="Screenshot 2024-07-10 at 2 10 24 PM" src="https://github.com/yebyyy/Tokenization/assets/144394157/35bdf7f1-0a37-4a8d-befb-b30ab4aae802">
+
+
 The GPT4 tokenizer outouts the following result:
 
 <img width="1290" alt="Screenshot 2024-07-10 at 1 54 12 PM" src="https://github.com/yebyyy/Tokenization/assets/144394157/fcb02285-aebc-4141-8d3e-ee6d8cad330e">
