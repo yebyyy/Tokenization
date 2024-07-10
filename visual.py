@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.text import Text
 from basic import BasicTokenizer
-from regex import RegexTokenizer
+from reg import RegexTokenizer
 
 # Function to print tokens with colors
 def print_colored_tokens(tokens):
@@ -39,13 +39,24 @@ if __name__ == "__main__":
 
     # Train the tokenizer on the input text
     basic_tokenizer = BasicTokenizer()
-    regex_tokenizer = RegexTokenizer()
+    regex_tokenizer = RegexTokenizer("GPT2")
 
-    basic_tokenizer.train(text, vocab_size=10000, verbose=False)
+    # basic_tokenizer.train(text, vocab_size=10000, verbose=False)
+    regex_tokenizer.train(text, vocab_size=10000, verbose=False)
 
     txt = input("\nInput: ")
     # Encode the text
-    tokens = basic_tokenizer.encode(txt)
+    # tokens = basic_tokenizer.encode(txt)
+    #
+    # Print encoded tokens with colors
+    # print("\nEncoded Tokens:")
+    # print_colored_tokens(tokens)
+    #
+    # # Print decoded text with colored tokens
+    # print("\nDecoded Text with Colors:")
+    # print_colored_decoded_text(tokens, basic_tokenizer.vocab)
+
+    tokens = regex_tokenizer.encode(txt)
 
     # Print encoded tokens with colors
     print("\nEncoded Tokens:")
@@ -53,4 +64,4 @@ if __name__ == "__main__":
 
     # Print decoded text with colored tokens
     print("\nDecoded Text with Colors:")
-    print_colored_decoded_text(tokens, basic_tokenizer.vocab)
+    print_colored_decoded_text(tokens, regex_tokenizer.vocab)

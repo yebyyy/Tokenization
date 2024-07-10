@@ -1,4 +1,4 @@
-import re as re
+import regex as re
 from base import Tokenizer, get_stats, merge
 
 GPT2_SPLIT_PATTERN = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
