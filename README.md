@@ -11,3 +11,13 @@ The implementation of the `base.py`, `basic.py`, and `regex.py` references the [
 which represents the generic tokenizer, the basic tokenizer with **BPE Algorithm**, and the regex tokenizer similar to what [OpenAI's Tiktoken for GPT4](https://github.com/openai/tiktoken)
 and [GPT2 Tokenizer](https://github.com/openai/gpt-2/blob/master/src/encoder.py) is made from.
 
+The basic bpe tokenizer outputs the following result:
+
+<img width="1131" alt="Screenshot 2024-07-10 at 11 29 19 AM" src="https://github.com/yebyyy/Tokenization/assets/144394157/60551325-afce-4abb-bc8a-e2eddac7758d">
+
+
+
+Decoded Text with Colors:
+This is a basic tokenizer implementation of the bpe algorithm with ten thousand vocabulary size.
+
+

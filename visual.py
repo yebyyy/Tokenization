@@ -53,4 +53,4 @@ if __name__ == "__main__":
 
     # Print decoded text with colored tokens
     print("\nDecoded Text with Colors:")
-    print_colored_decoded_text(tokens, tokenizer.vocab)
+    print_colored_decoded_text(tokens, basic_tokenizer.vocab)
