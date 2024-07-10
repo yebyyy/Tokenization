@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     txt = input("\nInput: ")
     # Encode the text
-    tokens = tokenizer.encode(txt)
+    tokens = basic_tokenizer.encode(txt)
 
     # Print encoded tokens with colors
     print("\nEncoded Tokens:")
